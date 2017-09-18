@@ -4,9 +4,9 @@ require 'Mustache/Autoloader.php';
 Mustache_Autoloader::register();
 
 function fctr_scripts() {
-	/* bootstrap */
-	wp_enqueue_style('css', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-	wp_enqueue_script('reviews-bootstrap', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", array('jquery'), false, true);
+  /* bootstrap */
+  wp_enqueue_style('css', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+  wp_enqueue_script('reviews-bootstrap', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", array('jquery'), false, true);
 
   wp_enqueue_style('style-css', get_stylesheet_directory_uri() . '/style.css');
   wp_enqueue_script('mustache-js', get_stylesheet_directory_uri() . '/dist/mustache.js', array('jquery'), '20170522', true);
@@ -19,8 +19,7 @@ add_action('wp_enqueue_scripts', 'fctr_scripts');
 function echoAllTemplates(){
   $files = scandir(__DIR__);
   foreach($files as $file){
-    if(strpos($file, '.mustache') !== FALSE){ 
-?>
+    if(strpos($file, '.mustache') !== FALSE){  ?>
     <script mustache-id="<?php echo $file; ?>" type="text/template">
 <?php 
   echo str_replace("</script>", '</re_script>', file_get_contents(__DIR__ . "/$file")); 
