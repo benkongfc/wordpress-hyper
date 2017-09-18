@@ -7,3 +7,6 @@ GPL
 #Donate
 If you like it, you could also buy me a coffee :)
 BTC: 1LpFRru8CHnVMNs8Hh5B3zD2iXJKfUNJTG
+
+#Install
+Install wordpress, put this git into wordpress theme directory, select this theme.
